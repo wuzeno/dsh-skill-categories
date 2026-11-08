@@ -40,6 +40,6 @@
 
 同日重新执行锁文件离线安装（`--frozen-lockfile --ignore-scripts --offline`）、构建、语法检查与全量测试，仍为 80 通过、0 失败。补充中文与英文 README、原创功能示意、带来源标注的截图排版、贡献与安全说明。用户提供的早期版本截图展示了部分交互，不补记为本轮自动化宿主验收。
 
-配置了 GitHub Actions 的 Windows 构建／测试／文档链接检查。工作流尚未在远程运行，不能据此宣称 CI 通过。图片原件、个人 profile、node_modules 与独立预览输出不纳入发布源码；脱敏和图片来源见 `docs/IMAGES.md`。
+已配置 GitHub Actions 的 Windows 构建／测试／文档链接检查。首次公开提交 `f2c1ec46d83cc8ac463ac9577d7725cd67ad44a8` 的 [远程工作流](https://github.com/wuzeno/dsh-skill-categories/actions/runs/42466288217) 已显示 completed successfully，运行耗时 1m 39s。这仍不等于真实 DSH 宿主验收。
 
-准备时 GitHub 浏览器访问失败、API 请求返回 403；本记录不代表远程仓库已经创建、代码已经推送或 npm 已发布。
+公开仓库为 https://github.com/wuzeno/dsh-skill-categories ，已推送完整插件、构建脚本、锁文件与测试。浏览器已确认中文 README 和全部展示图片正常载入；英文 README 单独提供。图片原件、个人 profile、node_modules 与独立预览输出未纳入发布源码；脱敏和图片来源见 `docs/IMAGES.md`。这次是 GitHub 源码预览发布，不是 npm 发布。

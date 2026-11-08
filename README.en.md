@@ -4,6 +4,8 @@
 
 [简体中文](README.md) · [Validation record](VALIDATION.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
+[![Build and test](https://github.com/wuzeno/dsh-skill-categories/actions/workflows/ci.yml/badge.svg)](https://github.com/wuzeno/dsh-skill-categories/actions/workflows/ci.yml)
+
 Once a skill collection grows, remembering what a skill does is easier than remembering its name. This plugin adds categories, tags, and batch organization to the DeepSeek Harness skill center, so you can find skills by purpose while managing, importing, or referencing them.
 
 ![Illustration of skill management, categories, and references](docs/images/hero.png)

@@ -4,6 +4,8 @@
 
 [English](README.en.md) · [验证记录](VALIDATION.md) · [第三方声明](THIRD_PARTY_NOTICES.md)
 
+[![Build and test](https://github.com/wuzeno/dsh-skill-categories/actions/workflows/ci.yml/badge.svg)](https://github.com/wuzeno/dsh-skill-categories/actions/workflows/ci.yml)
+
 技能装多了，记得名字和记得用途是两回事。这个插件把分类、标签和批量整理放进 DeepSeek Harness 的技能中心，让你在管理、导入和引用技能时都能按用途查找。
 
 ![技能管理、分类与引用的功能示意](docs/images/hero.png)
