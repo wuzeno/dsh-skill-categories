@@ -1,0 +1,17 @@
+node_modules/
+preview/
+artifacts/
+coverage/
+*.log
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.pem
+*.key
+*.p12
+*.pfx

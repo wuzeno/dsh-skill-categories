@@ -1,0 +1,73 @@
+{
+  "name": "dsh-skill-categories",
+  "version": "0.4.0",
+  "description": "Unified DSH skill center with skill management, custom categories, tags and post-import classification.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuzeno/dsh-skill-categories.git"
+  },
+  "homepage": "https://github.com/wuzeno/dsh-skill-categories#readme",
+  "bugs": "https://github.com/wuzeno/dsh-skill-categories/issues",
+  "license": "MIT AND BSD-3-Clause",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/en-US": "./locales/en-US.json",
+    "./locale/zh-CN": "./locales/zh-CN.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src/service.js",
+    "src/http.js",
+    "src/catalog.js",
+    "client.js",
+    "vendor/skill-explorer",
+    "locales",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "docs/images",
+    "docs/IMAGES.md",
+    "VALIDATION.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.js",
+    "check": "node --check index.js && node --check client.js",
+    "check:docs": "node scripts/check-docs.mjs"
+  },
+  "dependencies": {
+    "zod": "^4.1.0"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.3 <0.3.0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "devDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

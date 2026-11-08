@@ -1,0 +1,14 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { adaptExplorer } from './adapt-explorer.mjs';
+const root = new URL('../', import.meta.url);
+const css = (await Promise.all(['tokens.css', 'styles.css'].map(file => readFile(new URL(file, root), 'utf8')))).join('\n');
+const template = await readFile(new URL('src/client.js', root), 'utf8');
+if (!template.includes('__SKILL_CATEGORIES_CSS__')) throw new Error('Missing CSS placeholder');
+const upstream = await readFile(new URL('vendor/skill-explorer/client-source.js',root),'utf8');
+if(!template.includes('__SKILL_EXPLORER_FACTORY__'))throw new Error('Missing explorer placeholder');
+const picker=(await readFile(new URL('src/picker.js',root),'utf8')).replace('export function createPickerTools','function createPickerTools');
+if(!template.includes('__SKILL_PICKER_TOOLS__'))throw new Error('Missing picker placeholder');
+const unified=(await readFile(new URL('src/unified.js',root),'utf8')).replace('export function createUnifiedTools','function createUnifiedTools');
+if(!template.includes('__SKILL_UNIFIED_TOOLS__'))throw new Error('Missing unified view placeholder');
+await writeFile(new URL('client.js', root), template.replace('__SKILL_CATEGORIES_CSS__', JSON.stringify(css)).replace('__SKILL_EXPLORER_FACTORY__',()=>adaptExplorer(upstream)).replace('__SKILL_PICKER_TOOLS__',()=>`(()=>{${picker}\nreturn createPickerTools;})()`).replace('__SKILL_UNIFIED_TOOLS__',()=>`(()=>{${unified}\nreturn createUnifiedTools;})()`), 'utf8');
+console.log('Built client.js from src/client.js + scoped CSS');

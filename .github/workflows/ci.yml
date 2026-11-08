@@ -1,0 +1,24 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '11.28.5'
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: npm run build
+      - run: npm run check
+      - run: npm test
+      - run: npm run check:docs
+      - name: Ensure committed client matches its sources
+        run: git diff --exit-code -- client.js

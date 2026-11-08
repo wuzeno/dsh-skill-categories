@@ -1,0 +1,16 @@
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: DSH host tokens · signature: skill classification ledger · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V3 · weakest: V; use the real skill ledger and arrival queue, not dashboard cards. */
+.dshsc {
+  --sc-bg: var(--dsw-alias-bg-base, #171c21);
+  --sc-panel: var(--dsw-alias-bg-layer-1, #20272d);
+  --sc-ink: var(--dsw-alias-label-primary, #e2e7ed);
+  --sc-muted: var(--dsw-alias-label-secondary, #a8b4c1);
+  --sc-line: var(--dsw-alias-border-l1, #41505c);
+  --sc-accent: var(--dsw-alias-brand-primary, #8ed9bd);
+  --sc-on-accent: #132f26;
+  --sc-danger: var(--dsw-alias-state-error-primary, #ffb3b3);
+  --sc-shade: #10161db3;
+  --sc-font: inherit;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px;
+  --sc-radius: 8px;
+}
